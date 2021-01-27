@@ -1,0 +1,6 @@
+RewriteEngine On # Activer le module Rewrite
+
+RewriteRule ^characters/?$ index.php [NC,L]
+RewriteRule ^villages/?$ index.php [NC,L]
+
+RewriteRule ^[^/]+/(\d+)$ index.php?id=$1
