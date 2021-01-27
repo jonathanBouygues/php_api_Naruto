@@ -1,5 +1,53 @@
 <?php
 
+function getCharacters($id = 0,$idVillage = 0,$search = "") {
+
+    // Get the connexion data
+    global $conn;
+
+    // Create the SQL query
+    if ($idVillage !== 0) {
+        // with idVillage
+        $query = "SELECT * FROM characters WHERE idVillage = $idVillage";
+    } elseif ($id !== 0) {
+        // with id of the character
+        $query = "SELECT * FROM characters WHERE id = $id";
+    } else {
+        // global
+        $query = "SELECT * FROM characters";
+    }
+
+    // Initialisation of a array (encode in Json more later)
+    $response = array();
+
+    // Get the query's result and loop on it
+    $result = mysqli_query($conn, $query);
+    while ($row = mysqli_fetch_assoc($result)) {
+        // Get datas
+        $id = $row['id'];
+        $firstName = $row['firstName'];
+        $lastName = $row['lastName'];
+        $idVillage = 'http://localhost/tpApiNaruto/villages/'.$row['idVillage'];
+        $skill = $row['skill'];
+        // Instanciation of new object characters
+        $actionCharacters = new Character($id,$firstName,$lastName,$idVillage,$skill);
+        // Push the data on the response if search or not search
+        if ($search === "") {
+            $response[] = $actionCharacters; 
+        } else {
+            $resultSearch = $actionCharacters->searchCharacters($search);
+            if ($resultSearch) {
+                $response[] = $actionCharacters; 
+            }
+        }
+    }
+
+    // Formate the json response
+    header('Content-Type: application/json; charset=UTF-8');
+    echo json_encode($response, JSON_PRETTY_PRINT);
+}
+
+
 function getVillages($id = 0) {
 
     global $conn;
@@ -36,32 +84,3 @@ function getVillages($id = 0) {
     echo json_encode($response, JSON_PRETTY_PRINT);
 }
 
-function getCharacters($id = 0,$idVillage = 0) {
-
-    global $conn;
-    if ($idVillage !== 0) {
-        $query = "SELECT * FROM characters WHERE idVillage = $idVillage";
-    } elseif ($id !== 0) {
-        $query = "SELECT * FROM characters WHERE id = $id";
-    } else {
-        $query = "SELECT * FROM characters";
-    }
-
-    $response = array();
-    $result = mysqli_query($conn, $query);
-    while ($row = mysqli_fetch_assoc($result)) {
-        // Get datas
-        $id = $row['id'];
-        $firstName = $row['firstName'];
-        $lastName = $row['lastName'];
-        $idVillage = 'http://localhost/tpApiNaruto/villages/'.$row['idVillage'];
-        $skill = $row['skill'];
-
-        $actionCharacters = new Character($id,$firstName,$lastName,$idVillage,$skill);
-        $response[] = $actionCharacters; 
-
-    }
-
-    header('Content-Type: application/json; charset=UTF-8');
-    echo json_encode($response, JSON_PRETTY_PRINT);
-}

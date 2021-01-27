@@ -33,4 +33,10 @@ class Character implements JsonSerializable {
         ];
   }
 
+  public function searchCharacters(string $dataSearch) {
+
+    if ((strtolower($this->getFirstName()) === $dataSearch) || (strtolower($this->getLastName()) === $dataSearch) ||(strtolower($this->getSkill()) === $dataSearch)) {
+      return true; 
+    }
+  }
 }
