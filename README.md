@@ -38,17 +38,17 @@ o	http://localhost/tpApiNaruto/characters/{id}
 -	Endpoint d'une requête POST pour un nouveau perso : 
 o	http://localhost/tpApiNaruto/characters
 o	Accord Key/Value =>
-	firstName : string
-	lastName : string
-	idVillage : integer
-	skill : string
+ - firstName : string
+ - lastName : string
+ - idVillage : integer
+ - skill : string
 -	Endpoint d'une requête PUT sur un id de character : 
 o	http://localhost/tpApiNaruto/characters/{id}
 o	Accord Key/Value =>
-	firstName : string
-	lastName : string
-	idVillage : integer
-	skill : string
+ - firstName : string
+ - lastName : string
+ - idVillage : integer
+ - skill : string
 
 
 Requête Table Villages
@@ -62,13 +62,13 @@ o	http://localhost/tpApiNaruto/villages/{id}
 -	Endpoint d'une requête POST pour un nouveau village : 
 o	http://localhost/tpApiNaruto/villages
 o	Accord Key/Value =>
-	name : string
-	elementCountry : string
+ - name : string
+ - elementCountry : string
 -	Endpoint d'une requête PUT sur un id de village : 
 o	http://localhost/tpApiNaruto/villages/{id}
 o	Accord Key/Value =>
-	name : string
-	elementCountry : string
+ - name : string
+ - elementCountry : string
 
 
 Exemple d’une requête à l’API via Postman : http://localhost/tpApiNaruto/characters
