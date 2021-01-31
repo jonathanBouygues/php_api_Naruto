@@ -25,50 +25,26 @@ Les routes ont été définies et redirigées par le module « altoRouter » (vo
 
 Requête Table Characters
 
--	Endpoint d'une requête GET classique : 
-o	http://localhost/tpApiNaruto/characters
--	Endpoint d'une requête GET avec id du character : 
-o	http://localhost/tpApiNaruto/characters/{id}
--	Endpoint d'une requête GET avec un filtre sur l'id du village (ex : 1) :
-o	 http://localhost/tpApiNaruto/characters?idVillage={id}
--	Endpoint d'une requête GET avec une fonction "search": 
-o	http://localhost/tpApiNaruto/characters?search={value}
--	Endpoint d'une requête DELETE sur un id de character  : 
-o	http://localhost/tpApiNaruto/characters/{id}
--	Endpoint d'une requête POST pour un nouveau perso : 
-o	http://localhost/tpApiNaruto/characters
-o	Accord Key/Value =>
- - firstName : string
- - lastName : string
- - idVillage : integer
- - skill : string
--	Endpoint d'une requête PUT sur un id de character : 
-o	http://localhost/tpApiNaruto/characters/{id}
-o	Accord Key/Value =>
- - firstName : string
- - lastName : string
- - idVillage : integer
- - skill : string
+-	Endpoint d'une requête GET classique : http://localhost/tpApiNaruto/characters
+-	Endpoint d'une requête GET avec id du character : http://localhost/tpApiNaruto/characters/{id}
+-	Endpoint d'une requête GET avec un filtre sur l'id du village (ex : 1) : http://localhost/tpApiNaruto/characters?idVillage={id}
+-	Endpoint d'une requête GET avec une fonction "search": http://localhost/tpApiNaruto/characters?search={value}
+-	Endpoint d'une requête DELETE sur un id de character  : http://localhost/tpApiNaruto/characters/{id}
+-	Endpoint d'une requête POST pour un nouveau perso : http://localhost/tpApiNaruto/characters
+Accord Key/Value => firstName : string, lastName : string, idVillage : integer, skill : string
+-	Endpoint d'une requête PUT sur un id de character : http://localhost/tpApiNaruto/characters/{id}
+Accord Key/Value => firstName : string, lastName : string, idVillage : integer, skill : string
 
 
 Requête Table Villages
 
--	Endpoint d'une requête GET classique : 
-o	http://localhost/tpApiNaruto/villages
--	Endpoint d'une requête GET avec id du village : 
-o	http://localhost/tpApiNaruto/villages/{id}
--	Endpoint d'une requête DELETE sur un id du village  : 
-o	http://localhost/tpApiNaruto/villages/{id}
--	Endpoint d'une requête POST pour un nouveau village : 
-o	http://localhost/tpApiNaruto/villages
-o	Accord Key/Value =>
- - name : string
- - elementCountry : string
--	Endpoint d'une requête PUT sur un id de village : 
-o	http://localhost/tpApiNaruto/villages/{id}
-o	Accord Key/Value =>
- - name : string
- - elementCountry : string
+-	Endpoint d'une requête GET classique : http://localhost/tpApiNaruto/villages
+-	Endpoint d'une requête GET avec id du village : http://localhost/tpApiNaruto/villages/{id}
+-	Endpoint d'une requête DELETE sur un id du village : http://localhost/tpApiNaruto/villages/{id}
+-	Endpoint d'une requête POST pour un nouveau village : http://localhost/tpApiNaruto/villages
+Accord Key/Value => name : string, elementCountry : string
+-	Endpoint d'une requête PUT sur un id de village : http://localhost/tpApiNaruto/villages/{id}
+Accord Key/Value => name : string, elementCountry : string
 
 
 Exemple d’une requête à l’API via Postman : http://localhost/tpApiNaruto/characters
