@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3308
--- Généré le :  Dim 24 jan. 2021 à 13:23
+-- Généré le :  Dim 31 jan. 2021 à 15:45
 -- Version du serveur :  5.7.28
 -- Version de PHP :  7.3.12
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `characters` (
   `skill` varchar(80) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `key_village` (`idVillage`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `characters`
@@ -53,7 +53,8 @@ INSERT INTO `characters` (`id`, `firstName`, `lastName`, `idVillage`, `skill`) V
 (7, 'Onoki', 'inconnu', 4, 'Doton'),
 (8, 'Nagato', 'Pain', 6, 'Ningendo'),
 (9, 'Gaara', 'inconnu', 5, 'Sabaku Kyu'),
-(10, 'Hinata', 'Hyuga', 1, 'Byakugan');
+(10, 'Neji', 'Huyga', 1, 'Byakugan'),
+(11, 'Hinata', 'Huyga', 1, 'Byakugan');
 
 -- --------------------------------------------------------
 
@@ -67,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `villages` (
   `name` varchar(80) NOT NULL,
   `elementCountry` varchar(80) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `villages`
@@ -79,7 +80,8 @@ INSERT INTO `villages` (`id`, `name`, `elementCountry`) VALUES
 (3, 'Kumo ', 'Lightning'),
 (4, 'Iwa ', 'Earth'),
 (5, 'Suna ', 'Wind'),
-(6, 'Ame', 'Rain');
+(6, 'Ame', 'Rain'),
+(8, 'retest', 'Wind');
 
 --
 -- Contraintes pour les tables déchargées

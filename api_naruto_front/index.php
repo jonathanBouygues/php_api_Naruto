@@ -55,7 +55,7 @@
                     <h2>NEW NINJA</h2>
                 </div>
                 <div class="formpost">
-                    <form method="post" action="http://localhost/php/tpApiNaruto/characters/">
+                    <form method="post" action="http://localhost/php/tpApiNaruto/characters">
                         <div>
                             <input type="text" name="firstName" placeholder="First name">
                         </div>
